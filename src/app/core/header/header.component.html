@@ -1,6 +1,13 @@
 <mat-toolbar color="primary">
-  <span>Stock Portfolio Tracker</span>
-  <a routerLink="/">Explanations</a>
-  <a routerLink="/portfolios-overview">Portfolios</a>
-  <a routerLink="/dividends">Dividends</a>
+  <mat-toolbar-row>
+    <span>Stock Portfolio Tracker</span>
+    <a routerLink="/">Explanations</a>
+    <a routerLink="/portfolios-overview">Portfolios</a>
+    <a routerLink="/dividends">Dividends</a>
+    <span class="align-right-spacer"></span>
+    <span>
+      <!-- <mat-icon>power_settings_new</mat-icon> -->
+      <a routerLink="/">Logout</a>
+    </span>
+  </mat-toolbar-row>
 </mat-toolbar>
