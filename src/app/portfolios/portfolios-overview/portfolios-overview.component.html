@@ -9,24 +9,44 @@
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <table>
-          <tr>
-            <td>Portfolio Market Value (EURO)</td>
-            <td>3781.1</td>
-          </tr>
-          <tr>
-            <td>Total Cost (EURO)</td>
-            <td>3805.22</td>
-          </tr>
-          <tr>
-            <td>Effektive Cost (EURO)</td>
-            <td>3805.22</td>
-          </tr>
-          <tr>
-            <td>Forward annual dividends (EURO)</td>
-            <td>103.4</td>
-          </tr>
-        </table>
+        <div class="parent-container" fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="100px">
+          <table>
+            <tr>
+              <td>Portfolio Market Value (EUR):</td>
+              <td>3781.1</td>
+            </tr>
+            <tr>
+              <td>Total Cost (EUR):</td>
+              <td>3805.22</td>
+            </tr>
+            <tr>
+              <td>Effektive Cost (EUR):</td>
+              <td>3805.22</td>
+            </tr>
+            <tr>
+              <td>Forward annual dividends (EUR):</td>
+              <td>103.4</td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td>Dividends collected this year (EUR):</td>
+              <td>0.0</td>
+            </tr>
+            <tr>
+                <td>Dividends collected previous year (EUR):</td>
+                <td>0.0</td>
+            </tr>
+            <tr>
+              <td>Total income (EUR):</td>
+              <td>35.8</td>
+            </tr>
+            <tr>
+              <td>Total income (%):</td>
+              <td>0.93</td>
+            </tr>
+          </table>
+        </div>
       </mat-card-content>
       <mat-card-actions>
           <button mat-raised-button color="primary">View Portfolio</button>
