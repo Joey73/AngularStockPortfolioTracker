@@ -1,0 +1,16 @@
+<mat-accordion [displayMode]="displayMode" [multi]="multi" class="mat-expansion-demo-width">
+  <mat-expansion-panel #panel1  [hideToggle]="hideToggle">
+    <mat-expansion-panel-header>Positions</mat-expansion-panel-header>
+    <app-position></app-position>
+    <app-position></app-position>
+    <app-position></app-position>
+  </mat-expansion-panel>
+  <mat-expansion-panel #panel2 [hideToggle]="hideToggle" [disabled]="disabled">
+    <mat-expansion-panel-header>Trades</mat-expansion-panel-header>
+    Trades
+  </mat-expansion-panel>
+  <mat-expansion-panel #panel3 *ngIf="showPanel3" [hideToggle]="hideToggle">
+    <mat-expansion-panel-header>Dividends</mat-expansion-panel-header>
+    Dividends
+  </mat-expansion-panel>
+</mat-accordion>

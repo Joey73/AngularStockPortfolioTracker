@@ -11,6 +11,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material/table';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatChipsModule } from '@angular/material/chips';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,8 @@ import { LoginComponent } from './login/login.component';
 import { ErrorPageComponent } from './core/error-page/error-page.component';
 import { PortfoliosOverviewComponent } from './portfolios/portfolios-overview/portfolios-overview.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PortfolioDetailsComponent } from './portfolios/portfolio-details/portfolio-details.component';
+import { PositionComponent } from './portfolios/portfolio-details/position/position.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     LoginComponent,
     ErrorPageComponent,
-    PortfoliosOverviewComponent
+    PortfoliosOverviewComponent,
+    PortfolioDetailsComponent,
+    PositionComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +48,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatExpansionModule,
     MatTableModule,
     MatGridListModule,
+    MatChipsModule,
     FlexLayoutModule
   ],
   providers: [],
