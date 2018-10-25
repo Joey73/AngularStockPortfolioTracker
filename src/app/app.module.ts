@@ -19,10 +19,11 @@ import { DividendsComponent } from './dividends/dividends.component';
 import { HeaderComponent } from './core/header/header.component';
 import { LoginComponent } from './login/login.component';
 import { ErrorPageComponent } from './core/error-page/error-page.component';
-import { PortfoliosOverviewComponent } from './portfolios/portfolios-overview/portfolios-overview.component';
+import { PortfoliosOverviewComponent } from './portfolios-overview/portfolios-overview.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PortfolioDetailsComponent } from './portfolios/portfolio-details/portfolio-details.component';
-import { PositionComponent } from './portfolios/portfolio-details/position/position.component';
+import { PortfolioDetailsComponent } from './portfolios-overview/portfolio/portfolio-details/portfolio-details.component';
+import { PositionComponent } from './portfolios-overview/portfolio/portfolio-details/position/position.component';
+import { PortfolioComponent } from './portfolios-overview/portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { PositionComponent } from './portfolios/portfolio-details/position/posit
     ErrorPageComponent,
     PortfoliosOverviewComponent,
     PortfolioDetailsComponent,
-    PositionComponent
+    PositionComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,

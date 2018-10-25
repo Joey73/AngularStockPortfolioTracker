@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { ErrorPageComponent } from './core/error-page/error-page.component';
 import { DividendsComponent } from './dividends/dividends.component';
-import { PortfoliosOverviewComponent } from './portfolios/portfolios-overview/portfolios-overview.component';
+import { PortfoliosOverviewComponent } from './portfolios-overview/portfolios-overview.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
