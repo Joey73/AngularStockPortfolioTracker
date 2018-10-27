@@ -1,3 +1,6 @@
+import { PositionDto } from './position.dto';
+import { PortfolioDetailsDto } from './portfolioDetails.dto';
+
 export class PortfolioDto {
   constructor(
       public id: number,
@@ -9,6 +12,7 @@ export class PortfolioDto {
       public dividendsCollectedThisYear: number,
       public dividendsCollectedPreviousYear: number,
       public totalIncome: number,
-      public totalIncomeInPercent: number
+      public totalIncomeInPercent: number,
+      public portfolioDetailsDto: PortfolioDetailsDto
   ) {}
 }

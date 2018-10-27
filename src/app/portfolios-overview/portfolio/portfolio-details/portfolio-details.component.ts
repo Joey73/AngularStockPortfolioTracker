@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { PortfolioDto } from 'src/app/services/dto/portfolio.dto';
+import { PortfolioDetailsDto } from 'src/app/services/dto/portfolioDetails.dto';
+import { PositionDto } from 'src/app/services/dto/position.dto';
 
 @Component({
   selector: 'app-portfolio-details',
@@ -6,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./portfolio-details.component.sass']
 })
 export class PortfolioDetailsComponent implements OnInit {
+  @Input()
+  portfolioDetailsDto: PortfolioDetailsDto;
+
   displayMode = 'default';
   multi = false;
   hideToggle = false;

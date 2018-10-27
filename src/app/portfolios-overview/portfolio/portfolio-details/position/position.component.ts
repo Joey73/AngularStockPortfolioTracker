@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { PositionDto } from 'src/app/services/dto/position.dto';
 
 @Component({
   selector: 'app-position',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./position.component.sass']
 })
 export class PositionComponent implements OnInit {
+  @Input()
+  positionDto: PositionDto;
+
   myVariableColor = '#00FF00';
   constructor() { }
 

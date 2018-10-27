@@ -10,45 +10,48 @@
     "dividendsCollectedPreviousYear": 0.0,
     "totalIncome": 2.37,
     "totalIncomeInPercent": 0.06,
-    "positions":
-    [
-      {
-        "symbol": "AAPL",
-        "companyName": "Apple Inc.",
-        "currency": "USD",
-        "weight": 49.41,
-        "marketPrice": 219.44,
-        "effectivePrice": 222.15,
-        "totalValueGrowth": -27.1,
-        "numberOfShares": 10,
-        "marketValue": 2194.4,
-        "effectiveCosts": 221.5,
-        "totalEarnings": 0.0,
-        "forwardAnnualDividends": 29.2,
-        "trailingYieldOnMarket": 1.24,
-        "forwardYieldOnCost": 1.31,
-        "marketDiff": -27.1,
-        "marketDiffInPercent": -1.22
-      },
-      {
-        "symbol": "PEP",
-        "companyName": "PepsiCo Inc.",
-        "currency": "USD",
-        "weight": 12.34,
-        "marketPrice": 123.45,
-        "effectivePrice": 123.45,
-        "totalValueGrowth": -12.3,
-        "numberOfShares": 12,
-        "marketValue": 1234.5,
-        "effectiveCosts": 123.4,
-        "totalEarnings": 0.1,
-        "forwardAnnualDividends": 12.3,
-        "trailingYieldOnMarket": 1.23,
-        "forwardYieldOnCost": 3.21,
-        "marketDiff": -12.3,
-        "marketDiffInPercent": -1.23
-      }
-    ]
+    "portfolioDetails":
+    {
+      "positions":
+      [
+        {
+          "symbol": "AAPL",
+          "companyName": "Apple Inc.",
+          "currency": "USD",
+          "weight": 49.41,
+          "marketPrice": 219.44,
+          "effectivePrice": 222.15,
+          "totalValueGrowth": -27.1,
+          "numberOfShares": 10,
+          "marketValue": 2194.4,
+          "effectiveCosts": 221.5,
+          "totalEarnings": 0.0,
+          "forwardAnnualDividends": 29.2,
+          "trailingYieldOnMarket": 1.24,
+          "forwardYieldOnCost": 1.31,
+          "marketDiff": -27.1,
+          "marketDiffInPercent": -1.22
+        },
+        {
+          "symbol": "PEP",
+          "companyName": "PepsiCo Inc.",
+          "currency": "USD",
+          "weight": 12.34,
+          "marketPrice": 123.45,
+          "effectivePrice": 123.45,
+          "totalValueGrowth": -12.3,
+          "numberOfShares": 12,
+          "marketValue": 1234.5,
+          "effectiveCosts": 123.4,
+          "totalEarnings": 0.1,
+          "forwardAnnualDividends": 12.3,
+          "trailingYieldOnMarket": 1.23,
+          "forwardYieldOnCost": 3.21,
+          "marketDiff": -12.3,
+          "marketDiffInPercent": -1.23
+        }
+      ]
+    }
   },
   {
     "id": 101,
@@ -61,44 +64,47 @@
     "dividendsCollectedPreviousYear": 20.0,
     "totalIncome": 5.67,
     "totalIncomeInPercent": 0.10,
-    "positions":
-    [
-      {
-        "symbol": "ABC",
-        "companyName": "ABC Inc.",
-        "currency": "USD",
-        "weight": 49.41,
-        "marketPrice": 219.44,
-        "effectivePrice": 222.15,
-        "totalValueGrowth": -27.1,
-        "numberOfShares": 10,
-        "marketValue": 2194.4,
-        "effectiveCosts": 221.5,
-        "totalEarnings": 0.0,
-        "forwardAnnualDividends": 29.2,
-        "trailingYieldOnMarket": 1.24,
-        "forwardYieldOnCost": 1.31,
-        "marketDiff": -27.1,
-        "marketDiffInPercent": -1.22
-      },
-      {
-        "symbol": "DEF",
-        "companyName": "DEF Inc.",
-        "currency": "USD",
-        "weight": 12.34,
-        "marketPrice": 123.45,
-        "effectivePrice": 123.45,
-        "totalValueGrowth": -12.3,
-        "numberOfShares": 12,
-        "marketValue": 1234.5,
-        "effectiveCosts": 123.4,
-        "totalEarnings": 0.1,
-        "forwardAnnualDividends": 12.3,
-        "trailingYieldOnMarket": 1.23,
-        "forwardYieldOnCost": 3.21,
-        "marketDiff": -12.3,
-        "marketDiffInPercent": -1.23
-      }
-    ]
+    "portfolioDetails":
+    {
+      "positions":
+      [
+        {
+          "symbol": "ABC",
+          "companyName": "ABC Inc.",
+          "currency": "USD",
+          "weight": 49.41,
+          "marketPrice": 219.44,
+          "effectivePrice": 222.15,
+          "totalValueGrowth": -27.1,
+          "numberOfShares": 10,
+          "marketValue": 2194.4,
+          "effectiveCosts": 221.5,
+          "totalEarnings": 0.0,
+          "forwardAnnualDividends": 29.2,
+          "trailingYieldOnMarket": 1.24,
+          "forwardYieldOnCost": 1.31,
+          "marketDiff": -27.1,
+          "marketDiffInPercent": -1.22
+        },
+        {
+          "symbol": "DEF",
+          "companyName": "DEF Inc.",
+          "currency": "USD",
+          "weight": 12.34,
+          "marketPrice": 123.45,
+          "effectivePrice": 123.45,
+          "totalValueGrowth": -12.3,
+          "numberOfShares": 12,
+          "marketValue": 1234.5,
+          "effectiveCosts": 123.4,
+          "totalEarnings": 0.1,
+          "forwardAnnualDividends": 12.3,
+          "trailingYieldOnMarket": 1.23,
+          "forwardYieldOnCost": 3.21,
+          "marketDiff": -12.3,
+          "marketDiffInPercent": -1.23
+        }
+      ]
+    }
   }
 ]
