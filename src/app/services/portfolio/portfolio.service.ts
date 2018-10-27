@@ -1,6 +1,6 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-// import { Subject } from "rxjs/Subject";
+import { Subject } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
 import { PortfolioDto } from '../dto/portfolio.dto';
 import { Observable } from 'rxjs';
@@ -14,7 +14,35 @@ const BASE_URL = 'http://localhost:8080/stock/';
 export class PortfolioService {
   @Output() portfolioDtoArrayEventEmitter: EventEmitter<PortfolioDto[]> = new EventEmitter();
 
+  allPortfoliosSubject: Subject<PortfolioDto[]> = new Subject();
+  numberOfPortfoliosSubject: Subject<number> = new Subject();
+
   constructor(private httpClient: HttpClient) { }
+
+  // GET
+  getAllDummyPortfolios(): Observable<PortfolioDto[]> {
+    console.log('start getAllDummyPortfolios()');
+    let allPortfoliosObservable: Observable<PortfolioDto[]>;
+
+    allPortfoliosObservable = this.httpClient.get<PortfolioDto[]>('assets/dummy-data/all-portfolios.json')
+    .pipe(map(
+      (portfolios) => {
+        /*
+        for (const portfolio of portfolios) {
+          console.log('getAllDummyPortfolios()-Porfolio.Id: ' + portfolio.id);
+          console.log('getAllDummyPortfolios()-Porfolio.portfolioMarketValue: ' + portfolio.portfolioMarketValue);
+        }
+        */
+        this.numberOfPortfoliosSubject.next(portfolios.length);
+        return portfolios;
+      }
+    ));
+    allPortfoliosObservable.subscribe(
+      result => this.allPortfoliosSubject.next(result),
+      err => this.allPortfoliosSubject.error(err)
+    );
+    return allPortfoliosObservable;
+  }
 
   public getAllPortfolios(): Observable<PortfolioDto[]> {
     return this.httpClient.get<PortfolioDto[]>(BASE_URL + 'portfolio')
@@ -27,6 +55,7 @@ export class PortfolioService {
     ));
   }
 
+  // ADD
   public addPortfolio(portfolioDto: PortfolioDto) {
     const url: string = BASE_URL + 'portfolio/create';
     const headers = new HttpHeaders().set('Content-Type', 'application/json' );
@@ -46,6 +75,7 @@ export class PortfolioService {
     );
   }
 
+  // UPDATE
   public updatePortfolio(portfolioDto: PortfolioDto) {
     const url: string = BASE_URL + 'portfolio/' + portfolioDto.id;
     const headers = new HttpHeaders().set('Content-Type', 'application/json' );
@@ -63,6 +93,7 @@ export class PortfolioService {
     );
   }
 
+  // DELETE
   public deletePortfolio(portfolioDto: PortfolioDto) {
     const url: string = BASE_URL + 'portfolio/' + portfolioDto.id;
     const headers = new HttpHeaders().set('Content-Type', 'application/json' );

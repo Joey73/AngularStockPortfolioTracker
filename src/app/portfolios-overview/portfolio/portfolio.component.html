@@ -1,7 +1,7 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title>
-      My Stocks
+      {{ portfolioDto.portfolioName }}
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
@@ -9,37 +9,37 @@
       <table>
         <tr>
           <td>Portfolio Market Value (EUR):</td>
-          <td>3781.1</td>
+          <td>{{ portfolioDto.portfolioMarketValue }}</td>
         </tr>
         <tr>
           <td>Total Cost (EUR):</td>
-          <td>3805.22</td>
+          <td>{{ portfolioDto.totalCost }}</td>
         </tr>
         <tr>
           <td>Effektive Cost (EUR):</td>
-          <td>3805.22</td>
+          <td>{{ portfolioDto.effectiveCost }}</td>
         </tr>
         <tr>
           <td>Forward annual dividends (EUR):</td>
-          <td>103.4</td>
+          <td>{{ portfolioDto.forwardAnnualDividends }}</td>
         </tr>
       </table>
       <table>
         <tr>
           <td>Dividends collected this year (EUR):</td>
-          <td>0.0</td>
+          <td>{{ portfolioDto.dividendsCollectedThisYear }}</td>
         </tr>
         <tr>
             <td>Dividends collected previous year (EUR):</td>
-            <td>0.0</td>
+            <td>{{ portfolioDto.dividendsCollectedPreviousYear }}</td>
         </tr>
         <tr>
           <td>Total income (EUR):</td>
-          <td>35.8</td>
+          <td>{{ portfolioDto.totalIncome }}</td>
         </tr>
         <tr>
           <td>Total income (%):</td>
-          <td>0.93</td>
+          <td>{{ portfolioDto.totalIncomeInPercent }}</td>
         </tr>
       </table>
     </div>

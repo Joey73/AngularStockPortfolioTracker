@@ -1,0 +1,24 @@
+[
+  {
+      "id": "100",
+      "portfolioMarketValue": 3832.5,
+      "totalCost": 3830.13,
+      "effectiveCost": 3830.13,
+      "forwardAnnualDividends": 103.4,
+      "dividendsCollectedThisYear": 0.0,
+      "dividendsCollectedPreviousYear": 0.0,
+      "totalIncome": 2.37,
+      "totalIncomeInPercent": 0.06
+  },
+  {
+    "id": "101",
+    "portfolioMarketValue": 1234.5,
+    "totalCost": 4321.00,
+    "effectiveCost": 1112.33,
+    "forwardAnnualDividends": 203.4,
+    "dividendsCollectedThisYear": 30.0,
+    "dividendsCollectedPreviousYear": 20.0,
+    "totalIncome": 5.67,
+    "totalIncomeInPercent": 0.10
+  }
+]

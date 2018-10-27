@@ -1,7 +1,8 @@
 <div class="mat-card-padding">
-    <button mat-mini-fab color="primary">
-      <mat-icon aria-label="Add Portfolio">add</mat-icon>
-    </button>
-    <app-portfolio></app-portfolio>
-    <app-portfolio></app-portfolio>
+  <button mat-mini-fab color="primary">
+    <mat-icon aria-label="Add Portfolio">add</mat-icon>
+  </button>
+  <div *ngFor="let portfolioDto of portfolioDtoArray">
+    <app-portfolio [portfolioDto]="portfolioDto"></app-portfolio>
   </div>
+</div>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { PortfolioDto } from 'src/app/services/dto/portfolio.dto';
 
 @Component({
   selector: 'app-portfolio',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./portfolio.component.sass']
 })
 export class PortfolioComponent implements OnInit {
+  @Input()
+  portfolioDto: PortfolioDto;
+
   showDetails = false;
 
   constructor() { }
