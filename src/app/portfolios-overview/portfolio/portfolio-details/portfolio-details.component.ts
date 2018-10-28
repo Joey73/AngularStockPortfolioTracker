@@ -12,11 +12,6 @@ export class PortfolioDetailsComponent implements OnInit {
 
   displayMode = 'default';
   multi = false;
-  hideToggle = false;
-  disabled = false;
-  showPanel3 = true;
-  expandedHeight: string;
-  collapsedHeight: string;
 
   constructor() { }
 
