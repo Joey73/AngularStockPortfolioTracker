@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PortfolioDto } from 'src/app/services/dto/portfolio.dto';
 import { PortfolioDetailsDto } from 'src/app/services/dto/portfolioDetails.dto';
-import { PositionDto } from 'src/app/services/dto/position.dto';
 
 @Component({
   selector: 'app-portfolio-details',
@@ -10,7 +8,7 @@ import { PositionDto } from 'src/app/services/dto/position.dto';
 })
 export class PortfolioDetailsComponent implements OnInit {
   @Input()
-  portfolioDetailsDto: PortfolioDetailsDto;
+  portfolioDetails: PortfolioDetailsDto;
 
   displayMode = 'default';
   multi = false;

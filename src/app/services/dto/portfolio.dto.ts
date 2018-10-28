@@ -1,4 +1,3 @@
-import { PositionDto } from './position.dto';
 import { PortfolioDetailsDto } from './portfolioDetails.dto';
 
 export class PortfolioDto {
@@ -13,6 +12,6 @@ export class PortfolioDto {
       public dividendsCollectedPreviousYear: number,
       public totalIncome: number,
       public totalIncomeInPercent: number,
-      public portfolioDetailsDto: PortfolioDetailsDto
+      public portfolioDetails: PortfolioDetailsDto
   ) {}
 }

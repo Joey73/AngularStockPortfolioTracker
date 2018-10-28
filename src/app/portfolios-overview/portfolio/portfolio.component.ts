@@ -20,6 +20,7 @@ export class PortfolioComponent implements OnInit {
   onShowDetails() {
     if (this.showDetails === false) {
       this.showDetails = true;
+      console.log(this.portfolioDto);
     } else {
       this.showDetails = false;
     }

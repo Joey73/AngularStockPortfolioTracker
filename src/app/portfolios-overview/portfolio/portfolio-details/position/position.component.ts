@@ -8,7 +8,7 @@ import { PositionDto } from 'src/app/services/dto/position.dto';
 })
 export class PositionComponent implements OnInit {
   @Input()
-  positionDto: PositionDto;
+  position: PositionDto;
 
   myVariableColor = '#00FF00';
   constructor() { }

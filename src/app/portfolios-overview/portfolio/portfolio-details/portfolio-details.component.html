@@ -1,9 +1,9 @@
 <mat-accordion [displayMode]="displayMode" [multi]="multi" class="mat-expansion-demo-width">
   <mat-expansion-panel #panel1  [hideToggle]="hideToggle">
     <mat-expansion-panel-header>Positions</mat-expansion-panel-header>
-    <div *ngIf="portfolioDetailsDto">
-      <div *ngFor="let positionDto of portfolioDetailsDto.positionDtoArray">
-        <app-position [positionDto]="positionDto"></app-position>
+    <div *ngIf="portfolioDetails">
+      <div *ngFor="let position of portfolioDetails.positions">
+        <app-position [position]="position"></app-position>
       </div>
     </div>
   </mat-expansion-panel>
