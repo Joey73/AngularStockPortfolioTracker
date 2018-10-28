@@ -1,0 +1,81 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        {{ position.symbol }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="parent-container" fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="100px">
+        <table>
+          <tr>
+            <td>Name:</td>
+            <td>{{ position.companyName }}</td>
+          </tr>
+          <tr>
+            <td>Currency:</td>
+            <td>{{ position.currency }}</td>
+          </tr>
+          <tr>
+            <td>Weight:</td>
+            <td>{{ position.weight }}%</td>
+          </tr>
+        </table>
+
+        <table>
+          <tr>
+            <td>Market Price:</td>
+            <td>{{ position.marketPrice }} <mat-icon [ngStyle]="{'color':'green'}">trending_up</mat-icon></td>
+          </tr>
+          <tr>
+            <td>Effective Price:</td>
+            <td><mat-chip [ngStyle]="{'color':'green'}">{{ position.effectivePrice }}</mat-chip></td>
+          </tr>
+          <tr>
+            <td>Total value growth:</td>
+            <td>{{ position.totalValueGrowth }} <mat-icon [ngStyle]="{'color':'red'}">trending_down</mat-icon></td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td>Number of Shares:</td>
+            <td>{{ position.numberOfShares }}</td>
+          </tr>
+          <tr>
+            <td>Market Value:</td>
+            <td>{{ position.marketValue }}</td>
+          </tr>
+          <tr>
+            <td>Effective Costs:</td>
+            <td>{{ position.effectiveCosts }}</td>
+          </tr>
+          <tr>
+            <td>Total Earnings:</td>
+            <td>{{ position.totalEarnings }}</td>
+          </tr>
+          <tr>
+            <td>Forward Annual Dividends:</td>
+            <td>{{ position.forwardAnnualDividends }}</td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td>Trailing Yield on Market:</td>
+            <td>{{ position.trailingYieldOnMarket }} %</td>
+          </tr>
+          <tr>
+            <td>Forward Yield on Cost:</td>
+            <td>{{ position.forwardYieldOnCost }} %</td>
+          </tr>
+          <tr>
+            <td>Market Diff.:</td>
+            <td><mat-chip [ngStyle]="{'color':'red'}">{{ position.marketDiff }}</mat-chip></td>
+          </tr>
+          <tr>
+            <td>Market Diff. (%):</td>
+            <td><mat-chip [ngStyle]="{'color':'red'}">{{ position.marketDiffInPercent }}</mat-chip></td>
+          </tr>
+        </table>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <br>

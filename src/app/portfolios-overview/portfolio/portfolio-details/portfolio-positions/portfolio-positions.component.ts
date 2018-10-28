@@ -2,11 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { PositionDto } from 'src/app/services/dto/position.dto';
 
 @Component({
-  selector: 'app-position',
-  templateUrl: './position.component.html',
-  styleUrls: ['./position.component.sass']
+  selector: 'app-portfolio-positions',
+  templateUrl: './portfolio-positions.component.html',
+  styleUrls: ['./portfolio-positions.component.sass']
 })
-export class PositionComponent implements OnInit {
+export class PortfolioPositionsComponent implements OnInit {
   @Input()
   position: PositionDto;
 
@@ -15,5 +15,4 @@ export class PositionComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

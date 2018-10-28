@@ -24,8 +24,12 @@ import { ErrorPageComponent } from './core/error-page/error-page.component';
 import { PortfoliosOverviewComponent } from './portfolios-overview/portfolios-overview.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PortfolioDetailsComponent } from './portfolios-overview/portfolio/portfolio-details/portfolio-details.component';
-import { PositionComponent } from './portfolios-overview/portfolio/portfolio-details/position/position.component';
 import { PortfolioComponent } from './portfolios-overview/portfolio/portfolio.component';
+// tslint:disable-next-line:max-line-length
+import { PortfolioDividendsComponent } from './portfolios-overview/portfolio/portfolio-details/portfolio-dividends/portfolio-dividends.component';
+// tslint:disable-next-line:max-line-length
+import { PortfolioPositionsComponent } from './portfolios-overview/portfolio/portfolio-details/portfolio-positions/portfolio-positions.component';
+import { PortfolioTradesComponent } from './portfolios-overview/portfolio/portfolio-details/portfolio-trades/portfolio-trades.component';
 
 @NgModule({
   declarations: [
@@ -36,8 +40,10 @@ import { PortfolioComponent } from './portfolios-overview/portfolio/portfolio.co
     ErrorPageComponent,
     PortfoliosOverviewComponent,
     PortfolioDetailsComponent,
-    PositionComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    PortfolioDividendsComponent,
+    PortfolioPositionsComponent,
+    PortfolioTradesComponent
   ],
   imports: [
     BrowserModule,
