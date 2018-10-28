@@ -11,6 +11,7 @@ export class PortfolioComponent implements OnInit {
   portfolioDto: PortfolioDto;
 
   showDetails = false;
+  showAnalysis = false;
 
   constructor() { }
 
@@ -19,10 +20,19 @@ export class PortfolioComponent implements OnInit {
 
   onShowDetails() {
     if (this.showDetails === false) {
+      this.showAnalysis = false;
       this.showDetails = true;
-      console.log(this.portfolioDto);
     } else {
       this.showDetails = false;
+    }
+  }
+
+  onShowAnalysis() {
+    if (this.showAnalysis === false) {
+      this.showDetails = false;
+      this.showAnalysis = true;
+    } else {
+      this.showAnalysis = false;
     }
   }
 }

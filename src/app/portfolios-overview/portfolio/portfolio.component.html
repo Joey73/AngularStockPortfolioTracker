@@ -46,9 +46,12 @@
   </mat-card-content>
   <mat-card-actions>
       <button mat-raised-button color="primary" (click)="onShowDetails()">View Details</button>
-      <button mat-raised-button color="primary">View Analysis</button>
+      <button mat-raised-button color="primary" (click)="onShowAnalysis()">View Analysis</button>
   </mat-card-actions>
 </mat-card>
 <div *ngIf="showDetails">
   <app-portfolio-details [portfolioDetails]="portfolioDto?.portfolioDetails"></app-portfolio-details>
+</div>
+<div *ngIf="showAnalysis">
+  <app-portfolio-analysis [portfolioAnalysis]="portfolioDto?.portfolioAnalysis"></app-portfolio-analysis>
 </div>

@@ -1,0 +1,49 @@
+<mat-accordion [displayMode]="displayMode" [multi]="multi" class="mat-expansion-demo-width">
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>Important Ratios</mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-important-ratios></app-important-ratios>
+    <!--
+    <div *ngIf="portfolioAnalysis">
+    </div>
+    -->
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>Dividend Yield vs Dividend Payout Ratio</mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-dyvdpr></app-dyvdpr>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>Dividend Yield vs 5 Years Dividend Growth</mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-dyvfydg></app-dyvfydg>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>5 Years Dividend Growth vs 5 Years Revenue Growth</mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-fydgvfyrg></app-fydgvfyrg>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>P/E Ratio vs 5 Years Income Growth</mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-pervfyig></app-pervfyig>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>Sector and Weight</mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-sector-and-weight></app-sector-and-weight>
+  </mat-expansion-panel>
+
+</mat-accordion>

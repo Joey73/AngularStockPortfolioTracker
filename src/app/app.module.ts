@@ -31,6 +31,13 @@ import { PortfolioDividendsComponent } from './portfolios-overview/portfolio/por
 // tslint:disable-next-line:max-line-length
 import { PortfolioPositionsComponent } from './portfolios-overview/portfolio/portfolio-details/portfolio-positions/portfolio-positions.component';
 import { PortfolioTradesComponent } from './portfolios-overview/portfolio/portfolio-details/portfolio-trades/portfolio-trades.component';
+import { PortfolioAnalysisComponent } from './portfolios-overview/portfolio/portfolio-analysis/portfolio-analysis.component';
+import { ImportantRatiosComponent } from './portfolios-overview/portfolio/portfolio-analysis/important-ratios/important-ratios.component';
+import { FydgvfyrgComponent } from './portfolios-overview/portfolio/portfolio-analysis/fydgvfyrg/fydgvfyrg.component';
+import { PervfyigComponent } from './portfolios-overview/portfolio/portfolio-analysis/pervfyig/pervfyig.component';
+import { SectorAndWeightComponent } from './portfolios-overview/portfolio/portfolio-analysis/sector-and-weight/sector-and-weight.component';
+import { DyvdprComponent } from './portfolios-overview/portfolio/portfolio-analysis/dyvdpr/dyvdpr.component';
+import { DyvfydgComponent } from './portfolios-overview/portfolio/portfolio-analysis/dyvfydg/dyvfydg.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +51,14 @@ import { PortfolioTradesComponent } from './portfolios-overview/portfolio/portfo
     PortfolioComponent,
     PortfolioDividendsComponent,
     PortfolioPositionsComponent,
-    PortfolioTradesComponent
+    PortfolioTradesComponent,
+    PortfolioAnalysisComponent,
+    ImportantRatiosComponent,
+    FydgvfyrgComponent,
+    PervfyigComponent,
+    SectorAndWeightComponent,
+    DyvdprComponent,
+    DyvfydgComponent
   ],
   imports: [
     BrowserModule,
