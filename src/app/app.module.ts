@@ -14,6 +14,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material/table';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatInputModule } from '@angular/material/input';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -61,7 +62,8 @@ import { PortfolioTradesComponent } from './portfolios-overview/portfolio/portfo
     MatTableModule,
     MatGridListModule,
     MatChipsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
