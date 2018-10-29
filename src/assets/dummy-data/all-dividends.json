@@ -1,0 +1,54 @@
+[
+  {
+    "id": 100,
+    "stock": "MMM",
+    "company-name": "MMM, 3M Company",
+    "dividendGrowthRate": 17.2,
+    "FiveYearsDividendGrowth": 86.0,
+    "years":
+    [
+      {
+        "year": 2018,
+        "totalAmount": 4.08,
+        "records":
+        [
+          {
+            "id": 100,
+            "symbol": "MMM",
+            "payDate": "2018-08-23",
+            "amount": 1.36,
+            "currency": "USD"
+          },
+          {
+            "id": 200,
+            "symbol": "MMM",
+            "payDate": "2018-08-23",
+            "amount": 1.36,
+            "currency": "USD"
+          }
+        ]
+      },
+      {
+        "year": 2017,
+        "totalAmount": 2.02,
+        "records":
+        [
+          {
+            "id": 300,
+            "symbol": "MMM",
+            "payDate": "2017-08-23",
+            "amount": 1.23,
+            "currency": "USD"
+          },
+          {
+            "id": 400,
+            "symbol": "MMM",
+            "payDate": "2017-08-23",
+            "amount": 3.21,
+            "currency": "USD"
+          }
+        ]
+      }
+    ]
+  }
+]

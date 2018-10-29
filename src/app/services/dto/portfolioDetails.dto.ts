@@ -6,6 +6,6 @@ export class PortfolioDetailsDto {
   constructor(
     public positions: PositionDto[],
     public trades: TradeDto[],
-    public dividends: DividendDto[]
+    public dividend: DividendDto
   ) {}
 }

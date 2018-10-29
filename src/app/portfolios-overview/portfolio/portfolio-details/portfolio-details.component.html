@@ -25,9 +25,7 @@
         <mat-panel-title>Dividends</mat-panel-title>
     </mat-expansion-panel-header>
     <div *ngIf="portfolioDetails">
-      <div *ngFor="let dividend of portfolioDetails.dividends">
-        <app-portfolio-dividends [dividend]="dividend"></app-portfolio-dividends>
-      </div>
+      <app-portfolio-dividends [dividend]="portfolioDetails.dividend"></app-portfolio-dividends>
     </div>
   </mat-expansion-panel>
 
