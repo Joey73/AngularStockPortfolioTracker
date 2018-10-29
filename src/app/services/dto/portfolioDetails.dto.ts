@@ -1,11 +1,11 @@
 import { PositionDto } from './position.dto';
 import { TradeDto } from './trade.dto';
-import { DividendDto } from './dividend.dto';
+import { PortfolioDividendDto } from './portfolio-dividend.dto';
 
 export class PortfolioDetailsDto {
   constructor(
     public positions: PositionDto[],
     public trades: TradeDto[],
-    public dividend: DividendDto
+    public dividend: PortfolioDividendDto
   ) {}
 }

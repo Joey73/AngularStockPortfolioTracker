@@ -1,4 +1,4 @@
-export class DividendDto {
+export class PortfolioDividendDto {
   constructor(
       public id: number,
       public totalCollectedCad: number,

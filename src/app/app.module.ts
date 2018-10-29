@@ -18,7 +18,6 @@ import { MatInputModule } from '@angular/material/input';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DividendsComponent } from './dividends/dividends.component';
 import { HeaderComponent } from './core/header/header.component';
 import { LoginComponent } from './login/login.component';
 import { ErrorPageComponent } from './core/error-page/error-page.component';
@@ -38,11 +37,11 @@ import { PervfyigComponent } from './portfolios-overview/portfolio/portfolio-ana
 import { SectorAndWeightComponent } from './portfolios-overview/portfolio/portfolio-analysis/sector-and-weight/sector-and-weight.component';
 import { DyvdprComponent } from './portfolios-overview/portfolio/portfolio-analysis/dyvdpr/dyvdpr.component';
 import { DyvfydgComponent } from './portfolios-overview/portfolio/portfolio-analysis/dyvfydg/dyvfydg.component';
+import { DividendComponent } from './dividend/dividend.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DividendsComponent,
     HeaderComponent,
     LoginComponent,
     ErrorPageComponent,
@@ -58,7 +57,8 @@ import { DyvfydgComponent } from './portfolios-overview/portfolio/portfolio-anal
     PervfyigComponent,
     SectorAndWeightComponent,
     DyvdprComponent,
-    DyvfydgComponent
+    DyvfydgComponent,
+    DividendComponent
   ],
   imports: [
     BrowserModule,

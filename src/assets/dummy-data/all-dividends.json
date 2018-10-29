@@ -2,15 +2,15 @@
   {
     "id": 100,
     "stock": "MMM",
-    "company-name": "MMM, 3M Company",
+    "companyName": "MMM, 3M Company",
     "dividendGrowthRate": 17.2,
-    "FiveYearsDividendGrowth": 86.0,
-    "years":
+    "fiveYearsDividendGrowth": 86.0,
+    "dividendYears":
     [
       {
         "year": 2018,
         "totalAmount": 4.08,
-        "records":
+        "dividendYearTableRows":
         [
           {
             "id": 100,
@@ -31,7 +31,7 @@
       {
         "year": 2017,
         "totalAmount": 2.02,
-        "records":
+        "tableRows":
         [
           {
             "id": 300,

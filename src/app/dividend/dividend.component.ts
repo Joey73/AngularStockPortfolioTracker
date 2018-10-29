@@ -19,11 +19,11 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 @Component({
-  selector: 'app-dividends',
-  templateUrl: './dividends.component.html',
-  styleUrls: ['./dividends.component.sass']
+  selector: 'app-dividend',
+  templateUrl: './dividend.component.html',
+  styleUrls: ['./dividend.component.sass']
 })
-export class DividendsComponent implements OnInit {
+export class DividendComponent implements OnInit {
   @ViewChild(MatAccordion) accordion: MatAccordion;
 
   stocks: Stock[] = [
@@ -46,6 +46,10 @@ export class DividendsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  loadDataForStockChoice(choiceValue: string) {
+    console.log('Stock Choice: ' + choiceValue);
   }
 
 }

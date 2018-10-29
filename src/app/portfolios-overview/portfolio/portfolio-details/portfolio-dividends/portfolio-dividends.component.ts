@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DividendDto } from 'src/app/services/dto/dividend.dto';
+import { PortfolioDividendDto } from 'src/app/services/dto/portfolio-dividend.dto';
 
 @Component({
   selector: 'app-portfolio-dividends',
@@ -8,7 +8,7 @@ import { DividendDto } from 'src/app/services/dto/dividend.dto';
 })
 export class PortfolioDividendsComponent implements OnInit {
   @Input()
-  dividend: DividendDto;
+  dividend: PortfolioDividendDto;
 
   constructor() { }
 

@@ -9,14 +9,14 @@
     <mat-card-content>
       <span>Select Stock:</span><br>
       <mat-form-field>
-        <mat-select placeholder="Stock-List">
+        <mat-select placeholder="Stock-List" (selectionChange)="loadDataForStockChoice($event.value)">
           <mat-option *ngFor="let stock of stocks" [value]="stock.value">
             {{stock.viewValue}}
           </mat-option>
         </mat-select>
       </mat-form-field>
       <br>
-      <span>Dividend history of ...</span><br>
+      <span>Dividend history of</span><br>
       <span>Dividend Growth Rate ...</span><br>
       <span>5 years Dividend Growth ...</span><br>
     </mat-card-content>
