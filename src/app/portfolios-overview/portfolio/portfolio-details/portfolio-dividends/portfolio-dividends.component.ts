@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { DividendDto } from 'src/app/services/dto/dividend.dto';
 
 @Component({
   selector: 'app-portfolio-dividends',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./portfolio-dividends.component.sass']
 })
 export class PortfolioDividendsComponent implements OnInit {
+  @Input()
+  dividend: DividendDto;
 
   constructor() { }
 

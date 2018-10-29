@@ -15,14 +15,20 @@
     <mat-expansion-panel-header>
         <mat-panel-title>Trades</mat-panel-title>
     </mat-expansion-panel-header>
-    <app-portfolio-trades></app-portfolio-trades>
+    <div *ngIf="portfolioDetails">
+      <app-portfolio-trades [trades]="portfolioDetails.trades"></app-portfolio-trades>
+    </div>
   </mat-expansion-panel>
 
   <mat-expansion-panel>
     <mat-expansion-panel-header>
         <mat-panel-title>Dividends</mat-panel-title>
     </mat-expansion-panel-header>
-    <app-portfolio-dividends></app-portfolio-dividends>
+    <div *ngIf="portfolioDetails">
+      <div *ngFor="let dividend of portfolioDetails.dividends">
+        <app-portfolio-dividends [dividend]="dividend"></app-portfolio-dividends>
+      </div>
+    </div>
   </mat-expansion-panel>
 
 </mat-accordion>

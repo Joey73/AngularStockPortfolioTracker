@@ -50,6 +50,27 @@
           "marketDiff": -12.3,
           "marketDiffInPercent": -1.23
         }
+      ],
+      "trades":
+      [
+        {
+          "payDate": "2018-06-07",
+          "symbol": "TestSymbol1",
+          "buySell": "Buy",
+          "amountOfShares": 20,
+          "pricePerShare": 123,
+          "priceTotal": 1234,
+          "fee": 10
+        },
+        {
+          "payDate": "2017-06-10",
+          "symbol": "TestSymbol2",
+          "buySell": "Buy",
+          "amountOfShares": 30,
+          "pricePerShare": 321,
+          "priceTotal": 4321,
+          "fee": 15
+        }
       ]
     }
   },
@@ -103,6 +124,27 @@
           "forwardYieldOnCost": 3.21,
           "marketDiff": -12.3,
           "marketDiffInPercent": -1.23
+        }
+      ],
+      "trades":
+      [
+        {
+          "payDate": "2018-06-07",
+          "symbol": "TestSymbol1",
+          "buySell": "Buy",
+          "amountOfShares": 10,
+          "pricePerShare": 123,
+          "priceTotal": 1234,
+          "fee": 10
+        },
+        {
+          "payDate": "2017-06-10",
+          "symbol": "TestSymbol2",
+          "buySell": "Buy",
+          "amountOfShares": 30,
+          "pricePerShare": 321,
+          "priceTotal": 4321,
+          "fee": 15
         }
       ]
     }
