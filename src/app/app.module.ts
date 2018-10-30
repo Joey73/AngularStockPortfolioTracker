@@ -38,7 +38,9 @@ import { SectorAndWeightComponent } from './portfolios-overview/portfolio/portfo
 import { DyvdprComponent } from './portfolios-overview/portfolio/portfolio-analysis/dyvdpr/dyvdpr.component';
 import { DyvfydgComponent } from './portfolios-overview/portfolio/portfolio-analysis/dyvfydg/dyvfydg.component';
 import { DividendComponent } from './dividend/dividend.component';
-import { DividendYearsComponent } from './dividend/dividend-years/dividend-years.component';
+import { DividendAccordionComponent } from './dividend/dividend-accordion/dividend-accordion.component';
+import { DividendYearsComponent } from './dividend/dividend-accordion/dividend-years/dividend-years.component';
+import { DividendTableComponent } from './dividend/dividend-accordion/dividend-years/dividend-table/dividend-table.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,9 @@ import { DividendYearsComponent } from './dividend/dividend-years/dividend-years
     DyvdprComponent,
     DyvfydgComponent,
     DividendComponent,
-    DividendYearsComponent
+    DividendYearsComponent,
+    DividendTableComponent,
+    DividendAccordionComponent
   ],
   imports: [
     BrowserModule,

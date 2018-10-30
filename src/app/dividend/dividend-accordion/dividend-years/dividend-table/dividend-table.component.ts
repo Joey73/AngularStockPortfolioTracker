@@ -13,21 +13,13 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 @Component({
-  selector: 'app-dividend-years',
-  templateUrl: './dividend-years.component.html',
-  styleUrls: ['./dividend-years.component.sass']
+  selector: 'app-dividend-table',
+  templateUrl: './dividend-table.component.html',
+  styleUrls: ['./dividend-table.component.sass']
 })
-export class DividendYearsComponent implements OnInit {
+export class DividendTableComponent implements OnInit {
   displayedColumns: string[] = ['symbol', 'payDate', 'amount', 'currency'];
   dataSource = ELEMENT_DATA;
-
-  displayMode = 'default';
-  multi = false;
-  hideToggle = false;
-  disabled = false;
-  showPanel3 = true;
-  expandedHeight: string;
-  collapsedHeight: string;
 
   constructor() { }
 
