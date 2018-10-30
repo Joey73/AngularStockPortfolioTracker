@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 import { Observable, Subject } from 'rxjs';
 
 const BASE_URL = 'http://ddb-web.herokuapp.com/api/v1/';
+// http://ddb-web.herokuapp.com/api/v1/dividends/MMM/2017
 
 @Injectable({
   providedIn: 'root'
