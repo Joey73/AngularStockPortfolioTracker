@@ -3,7 +3,7 @@ export class TradeDto {
       public id: number,
       public payDate: string,
       public symbol: string,
-      public buySell: string,
+      public buyOrSell: string,
       public amountOfShares: number,
       public marketPrice: number,
       public pricePerShare: number,
