@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 const BASE_URL = 'http://localhost:8080/stock/';
+// http://ddb-web.herokuapp.com/api/application.wadl
 
 @Injectable({
   providedIn: 'root'
