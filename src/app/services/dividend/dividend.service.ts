@@ -8,6 +8,7 @@ import { DividendYearTableRowDto } from '../dto/dividend-years-table-row.dto';
 
 const BASE_URL = 'http://ddb-web.herokuapp.com/api/v1/';
 // http://ddb-web.herokuapp.com/api/v1/dividends/MMM/2017
+// http://ddb-web.herokuapp.com/api/v1/stocks/find/inter (find "inter")
 
 @Injectable({
   providedIn: 'root'
