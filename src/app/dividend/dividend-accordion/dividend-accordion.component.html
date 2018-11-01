@@ -1,4 +1,7 @@
 <mat-accordion [displayMode]="displayMode" [multi]="multi" class="mat-expansion-demo-width">
-  <!-- for each year -->
-    <app-dividend-years></app-dividend-years>
+    <app-dividend-years [year]="2018" [chosenSymbol]="chosenSymbol"></app-dividend-years>
+    <app-dividend-years [year]="2017" [chosenSymbol]="chosenSymbol"></app-dividend-years>
+    <app-dividend-years [year]="2016" [chosenSymbol]="chosenSymbol"></app-dividend-years>
+    <app-dividend-years [year]="2015" [chosenSymbol]="chosenSymbol"></app-dividend-years>
+    <app-dividend-years [year]="2014" [chosenSymbol]="chosenSymbol"></app-dividend-years>
 </mat-accordion>

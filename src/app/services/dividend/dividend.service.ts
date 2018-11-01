@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { Observable, Subject } from 'rxjs';
 import { DividendYearTableRowDto } from '../dto/dividend-years-table-row.dto';
+import { DividendYearTableRowSummaryDto } from '../dto/dividend-years-table-row-summary.dto';
 
 const BASE_URL = 'http://ddb-web.herokuapp.com/api/v1/';
 // http://ddb-web.herokuapp.com/api/v1/dividends/MMM/2017
@@ -16,7 +17,7 @@ const BASE_URL = 'http://ddb-web.herokuapp.com/api/v1/';
 export class DividendService {
 
   allStocksSubject: Subject<StockDto[]> = new Subject();
-  dividendYearTableRowSubject: Subject<DividendYearTableRowDto[]> = new Subject();
+  dividendYearTableRowSummarySubject: Subject<DividendYearTableRowSummaryDto[]> = new Subject();
 
   constructor(private httpClient: HttpClient) { }
 
@@ -25,9 +26,11 @@ export class DividendService {
     allStocksObservable = this.httpClient.get<StockDto[]>(BASE_URL + 'stocks')
     .pipe(map(
       (stocks) => {
+        /*
         for (const stock of stocks) {
           console.log(stock.name);
         }
+        */
         return stocks;
       }
     ));
@@ -38,23 +41,41 @@ export class DividendService {
     return allStocksObservable;
   }
 
-  public getDataOfYear(year: number) {
-    let dividendYearTableRowObservable: Observable<DividendYearTableRowDto[]>;
-    dividendYearTableRowObservable = this.httpClient.get<DividendYearTableRowDto[]>(BASE_URL + 'dividends/MMM/2017')
+  public getDataOfYear(symbol: string, year: string) {
+    let dividendYearTableRowSummaryObservable: Observable<DividendYearTableRowSummaryDto[]>;
+    dividendYearTableRowSummaryObservable = this.httpClient
+    .get<DividendYearTableRowDto[]>(BASE_URL + 'dividends/' + symbol + '/' + year)
     .pipe(map(
       (rows) => {
+        return this.getDividentYearTableRowSummary(rows);
+      }
+      /*
+      (rows) => {
+        console.log('getDataOfYear(' + year + '):');
         for (const row of rows) {
           console.log(row.id);
           console.log(row.symbol);
-          console.log(row.amount);
+          console.log(row.totalAmount);
         }
         return rows;
       }
-    ));
-    dividendYearTableRowObservable.subscribe(
-      rows => this.dividendYearTableRowSubject.next(rows),
-      err => this.dividendYearTableRowSubject.error(err)
+      */
+    )
     );
-    return ;
+    dividendYearTableRowSummaryObservable.subscribe(
+      rows => this.dividendYearTableRowSummarySubject.next(rows),
+      err => this.dividendYearTableRowSummarySubject.error(err)
+    );
+    return dividendYearTableRowSummaryObservable;
+  }
+
+  getDividentYearTableRowSummary(rows: DividendYearTableRowDto[]): DividendYearTableRowSummaryDto[] {
+    return rows.map(row => new DividendYearTableRowSummaryDto(
+      row.id,
+      row.symbol,
+      row.payDate.dayOfMonth + row.payDate.month,
+      row.amountPerShare,
+      row.currency
+    ));
   }
 }

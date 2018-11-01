@@ -1,4 +1,4 @@
 <mat-expansion-panel>
-  <mat-expansion-panel-header>2018 TOTAL = 0.0</mat-expansion-panel-header>
-  <app-dividend-table></app-dividend-table>
+  <mat-expansion-panel-header>{{ year }} TOTAL = 0.0</mat-expansion-panel-header>
+  <app-dividend-table *ngIf="dividendYearTableRowSummaryDtoArray" [dividendYearTableRowSummaryDtoArray]="dividendYearTableRowSummaryDtoArray"></app-dividend-table>
 </mat-expansion-panel>

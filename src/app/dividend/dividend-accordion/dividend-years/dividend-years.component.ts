@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DividendService } from 'src/app/services/dividend/dividend.service';
-import { DividendYearTableRowDto } from 'src/app/services/dto/dividend-years-table-row.dto';
-
+import { DividendYearTableRowSummaryDto } from 'src/app/services/dto/dividend-years-table-row-summary.dto';
 
 @Component({
   selector: 'app-dividend-years',
@@ -9,19 +8,25 @@ import { DividendYearTableRowDto } from 'src/app/services/dto/dividend-years-tab
   styleUrls: ['./dividend-years.component.sass']
 })
 export class DividendYearsComponent implements OnInit {
-  dividendYearTableRowDtoArray: DividendYearTableRowDto[];
+  @Input()
+  year: string;
+  @Input()
+  chosenSymbol: string;
+
+  dividendYearTableRowSummaryDtoArray: DividendYearTableRowSummaryDto[];
 
   constructor(private dividendService: DividendService) { }
 
   ngOnInit() {
-  }
-
-  on() {
-    this.dividendService.dividendYearTableRowSubject.subscribe(
-      dividendYearTableRowDtoArray => {
-        this.dividendYearTableRowDtoArray = dividendYearTableRowDtoArray;
+    console.log('--->>>chosenSymbol: ' + this.chosenSymbol);
+    this.dividendService.getDataOfYear(this.chosenSymbol, this.year).subscribe(
+      dividendYearTableRowSummaryDtoArray => {
+        console.log('***********************');
+        console.log('Year: ' + this.year);
+        console.log(dividendYearTableRowSummaryDtoArray);
+        console.log('***********************');
+        this.dividendYearTableRowSummaryDtoArray = dividendYearTableRowSummaryDtoArray;
       }
     );
   }
-
 }

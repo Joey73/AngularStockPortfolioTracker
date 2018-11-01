@@ -17,15 +17,14 @@ export interface Stock {
 export class DividendComponent implements OnInit {
   @ViewChild(MatAccordion) accordion: MatAccordion;
 
-  dividendYears: number[];
-
   stockDtoArray: StockDto[];
-  showDividendYears = false;
+  showDividendAccordion = false;
+  chosenSymbol: string;
 
   constructor(private dividendService: DividendService) { }
 
   ngOnInit() {
-    this.showDividendYears = false;
+    this.showDividendAccordion = false;
 
     this.dividendService.allStocksSubject.subscribe(
       stockDtoArray => {
@@ -37,12 +36,18 @@ export class DividendComponent implements OnInit {
     });
   }
 
+  onSelectionChange(choice: string) {
+    this.loadDataForStockChoice(choice);
+
+    if (choice != null) {
+      this.chosenSymbol = choice;
+      this.showDividendAccordion = true;
+    } else {
+      this.showDividendAccordion = false;
+    }
+  }
+
   loadDataForStockChoice(choice: string) {
     console.log('Stock Choice: ' + choice);
-    if (choice != null) {
-      this.showDividendYears = true;
-    } else {
-      this.showDividendYears = false;
-    }
   }
 }
