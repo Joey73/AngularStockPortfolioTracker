@@ -13,13 +13,11 @@ export class DividendAccordionComponent implements OnInit {
 
   displayMode = 'default';
   multi = false;
-  // years: number[] = [2018, 2017, 2016, 2015, 2014];
 
   constructor() { }
 
   ngOnInit() {
-    console.log('----->Symbol: ' + this.chosenSymbol);
+    // console.log('----->Symbol: ' + this.chosenSymbol);
     this.symbol = this.chosenSymbol;
   }
-
 }

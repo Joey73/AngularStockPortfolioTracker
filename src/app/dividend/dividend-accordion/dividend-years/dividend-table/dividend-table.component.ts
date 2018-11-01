@@ -37,9 +37,9 @@ export class DividendTableComponent implements OnInit {
 
   ngOnInit() {
     this.dividendService.symbolChangedSubject.subscribe(symbol => {
-      console.log('dividend-table:');
-      console.log('Symbol: ' + symbol);
-      console.log('Year: ' + this.year);
+      // console.log('dividend-table:');
+      // console.log('Symbol: ' + symbol);
+      // console.log('Year: ' + this.year);
       this.dividendService.getDataOfYear(symbol, this.year).subscribe(
         dividendYearTableRowSummaryDtoArray => {
           console.log(dividendYearTableRowSummaryDtoArray);
