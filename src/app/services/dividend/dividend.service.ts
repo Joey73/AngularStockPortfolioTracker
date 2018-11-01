@@ -3,7 +3,7 @@ import { StockDto } from '../dto/stock.dto';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import { DividendYearTableRowDto } from '../dto/dividend-years-table-row.dto';
 import { DividendYearTableRowSummaryDto } from '../dto/dividend-years-table-row-summary.dto';
 
@@ -15,11 +15,20 @@ const BASE_URL = 'http://ddb-web.herokuapp.com/api/v1/';
   providedIn: 'root'
 })
 export class DividendService {
+  symbol: string;
 
   allStocksSubject: Subject<StockDto[]> = new Subject();
   dividendYearTableRowSummarySubject: Subject<DividendYearTableRowSummaryDto[]> = new Subject();
 
+  symbolChangedSubject: BehaviorSubject<string> = new BehaviorSubject<string>(null);
+  // symbolChanged = this.symbolChangedSubject.asObservable();
+
   constructor(private httpClient: HttpClient) { }
+
+  public changeSymbol(newSymbol: string) {
+    this.symbol = newSymbol;
+    this.symbolChangedSubject.next(newSymbol);
+  }
 
   public getAllStocks(): Observable<StockDto[]> {
     let allStocksObservable: Observable<StockDto[]>;

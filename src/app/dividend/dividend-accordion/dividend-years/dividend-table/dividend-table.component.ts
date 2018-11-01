@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DividendYearTableRowDto } from 'src/app/services/dto/dividend-years-table-row.dto';
 import { DividendYearTableRowSummaryDto } from 'src/app/services/dto/dividend-years-table-row-summary.dto';
+import { DividendService } from 'src/app/services/dividend/dividend.service';
 
 export interface PeriodicElement {
   symbol: string;
@@ -22,15 +23,35 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./dividend-table.component.sass']
 })
 export class DividendTableComponent implements OnInit {
+  // @Input()
+  // dividendYearTableRowSummaryDtoArray: DividendYearTableRowSummaryDto[];
   @Input()
+  year: string;
+
   dividendYearTableRowSummaryDtoArray: DividendYearTableRowSummaryDto[];
 
   displayedColumns: string[] = ['symbol', 'payDate', 'amount', 'currency'];
-  dataSource = this.dividendYearTableRowSummaryDtoArray;
+  dataSource = null;
 
-  constructor() { }
+  constructor(private dividendService: DividendService) { }
 
   ngOnInit() {
+    this.dividendService.symbolChangedSubject.subscribe(symbol => {
+      console.log('dividend-table:');
+      console.log('Symbol: ' + symbol);
+      console.log('Year: ' + this.year);
+      this.dividendService.getDataOfYear(symbol, this.year).subscribe(
+        dividendYearTableRowSummaryDtoArray => {
+          console.log('***********************');
+          console.log('Year: ' + this.year);
+          console.log(dividendYearTableRowSummaryDtoArray);
+          console.log('***********************');
+          this.dividendYearTableRowSummaryDtoArray = dividendYearTableRowSummaryDtoArray;
+          this.dataSource = this.dividendYearTableRowSummaryDtoArray;
+        }
+      );
+    });
+
     /*
     console.log('---> dividendYearTableRowSummaryDtoArray:');
     this.dividendYearTableRowSummaryDtoArray.forEach(element => {
@@ -38,8 +59,8 @@ export class DividendTableComponent implements OnInit {
       console.log(element.id);
       console.log(element.amount);
     });
-    */
     this.dataSource = this.dividendYearTableRowSummaryDtoArray;
+    */
   }
 
 }

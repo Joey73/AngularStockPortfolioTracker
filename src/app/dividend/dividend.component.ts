@@ -42,6 +42,7 @@ export class DividendComponent implements OnInit {
     if (choice != null) {
       this.chosenSymbol = choice;
       this.showDividendAccordion = true;
+      this.dividendService.changeSymbol(this.chosenSymbol);
     } else {
       this.showDividendAccordion = false;
     }

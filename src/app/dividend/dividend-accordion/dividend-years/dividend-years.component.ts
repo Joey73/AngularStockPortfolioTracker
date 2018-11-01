@@ -18,6 +18,21 @@ export class DividendYearsComponent implements OnInit {
   constructor(private dividendService: DividendService) { }
 
   ngOnInit() {
+    this.dividendService.symbolChangedSubject.subscribe(symbol => {
+      // console.log('dividend-years:');
+      // console.log('Symbol: ' + symbol);
+      // console.log('Year: ' + this.year);
+      this.dividendService.getDataOfYear(symbol, this.year).subscribe(
+        dividendYearTableRowSummaryDtoArray => {
+          console.log('***********************');
+          console.log('Year: ' + this.year);
+          console.log(dividendYearTableRowSummaryDtoArray);
+          console.log('***********************');
+          this.dividendYearTableRowSummaryDtoArray = dividendYearTableRowSummaryDtoArray;
+        }
+      );
+    });
+    /*
     console.log('--->>>chosenSymbol: ' + this.chosenSymbol);
     this.dividendService.getDataOfYear(this.chosenSymbol, this.year).subscribe(
       dividendYearTableRowSummaryDtoArray => {
@@ -28,5 +43,6 @@ export class DividendYearsComponent implements OnInit {
         this.dividendYearTableRowSummaryDtoArray = dividendYearTableRowSummaryDtoArray;
       }
     );
+    */
   }
 }
