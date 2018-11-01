@@ -21,7 +21,6 @@ export class DividendService {
   dividendYearTableRowSummarySubject: Subject<DividendYearTableRowSummaryDto[]> = new Subject();
 
   symbolChangedSubject: BehaviorSubject<string> = new BehaviorSubject<string>(null);
-  // symbolChanged = this.symbolChangedSubject.asObservable();
 
   constructor(private httpClient: HttpClient) { }
 
@@ -35,11 +34,6 @@ export class DividendService {
     allStocksObservable = this.httpClient.get<StockDto[]>(BASE_URL + 'stocks')
     .pipe(map(
       (stocks) => {
-        /*
-        for (const stock of stocks) {
-          console.log(stock.name);
-        }
-        */
         return stocks;
       }
     ));
@@ -58,19 +52,7 @@ export class DividendService {
       (rows) => {
         return this.getDividentYearTableRowSummary(rows);
       }
-      /*
-      (rows) => {
-        console.log('getDataOfYear(' + year + '):');
-        for (const row of rows) {
-          console.log(row.id);
-          console.log(row.symbol);
-          console.log(row.totalAmount);
-        }
-        return rows;
-      }
-      */
-    )
-    );
+    ));
     dividendYearTableRowSummaryObservable.subscribe(
       rows => this.dividendYearTableRowSummarySubject.next(rows),
       err => this.dividendYearTableRowSummarySubject.error(err)

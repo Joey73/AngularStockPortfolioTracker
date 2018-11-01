@@ -42,25 +42,11 @@ export class DividendTableComponent implements OnInit {
       console.log('Year: ' + this.year);
       this.dividendService.getDataOfYear(symbol, this.year).subscribe(
         dividendYearTableRowSummaryDtoArray => {
-          console.log('***********************');
-          console.log('Year: ' + this.year);
           console.log(dividendYearTableRowSummaryDtoArray);
-          console.log('***********************');
           this.dividendYearTableRowSummaryDtoArray = dividendYearTableRowSummaryDtoArray;
           this.dataSource = this.dividendYearTableRowSummaryDtoArray;
         }
       );
     });
-
-    /*
-    console.log('---> dividendYearTableRowSummaryDtoArray:');
-    this.dividendYearTableRowSummaryDtoArray.forEach(element => {
-      console.log(element.symbol);
-      console.log(element.id);
-      console.log(element.amount);
-    });
-    this.dataSource = this.dividendYearTableRowSummaryDtoArray;
-    */
   }
-
 }
