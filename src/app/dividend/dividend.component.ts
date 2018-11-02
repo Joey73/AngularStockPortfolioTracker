@@ -3,6 +3,7 @@ import { MatAccordion } from '@angular/material';
 
 import { DividendService } from '../services/dividend/dividend.service';
 import { StockDto } from '../services/dto/stock.dto';
+import { DividendStatisticsDto } from '../services/dto/dividend-statistics.dto';
 
 export interface Stock {
   value: string;
@@ -18,6 +19,7 @@ export class DividendComponent implements OnInit {
   @ViewChild(MatAccordion) accordion: MatAccordion;
 
   stockDtoArray: StockDto[];
+  dividendStatisticsDto: DividendStatisticsDto;
   showDividendAccordion = false;
   chosenSymbol: string;
 
@@ -33,6 +35,10 @@ export class DividendComponent implements OnInit {
     );
     this.dividendService.getAllStocks().subscribe(data => {
       console.log(data);
+    });
+
+    this.dividendService.dividendStatisticsSubject.subscribe(dividendStatisticsDto => {
+      this.dividendStatisticsDto = dividendStatisticsDto;
     });
   }
 
@@ -50,5 +56,6 @@ export class DividendComponent implements OnInit {
 
   loadDataForStockChoice(choice: string) {
     console.log('Stock Choice: ' + choice);
+    this.dividendService.getDividendStatistics(choice);
   }
 }

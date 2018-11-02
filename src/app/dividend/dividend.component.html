@@ -16,9 +16,20 @@
         </mat-select>
       </mat-form-field>
       <br>
-      <span>Dividend history of</span><br>
-      <span>Dividend Growth Rate ...</span><br>
-      <span>5 years Dividend Growth ...</span><br>
+      <table>
+        <tr>
+          <td>Dividend history of:</td>
+          <td><span *ngIf="chosenSymbol">{{ chosenSymbol }}</span><br></td>
+        </tr>
+        <tr>
+          <td>Dividend Growth Rate:</td>
+          <td><span *ngIf="dividendStatisticsDto">{{ dividendStatisticsDto.growthRate }} %</span></td>
+        </tr>
+        <tr>
+          <td>5 years Dividend Growth:</td>
+          <td><span *ngIf="dividendStatisticsDto">{{ dividendStatisticsDto.growth5Y }} %</span></td>
+        </tr>
+      </table>
     </mat-card-content>
   </mat-card>
   <br>
