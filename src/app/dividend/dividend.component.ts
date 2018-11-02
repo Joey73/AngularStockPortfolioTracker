@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatAccordion } from '@angular/material';
 
 import { DividendService } from '../services/dividend/dividend.service';
@@ -17,6 +17,7 @@ export interface Stock {
   selector: 'app-dividend',
   templateUrl: './dividend.component.html',
   styleUrls: ['./dividend.component.sass']
+  /* encapsulation: ViewEncapsulation.None */
 })
 export class DividendComponent implements OnInit {
   @ViewChild(MatAccordion) accordion: MatAccordion;
@@ -77,11 +78,6 @@ export class DividendComponent implements OnInit {
   }
   */
 
-  loadDataForStockChoice(choice: string) {
-    console.log('Stock Choice: ' + choice);
-    this.dividendService.getDividendStatistics(choice);
-  }
-
   onEnter(choice: string) {
     console.log('onEnter: ' + choice);
 
@@ -94,5 +90,10 @@ export class DividendComponent implements OnInit {
     } else {
       this.showDividendAccordion = false;
     }
+  }
+
+  loadDataForStockChoice(choice: string) {
+    console.log('Stock Choice: ' + choice);
+    this.dividendService.getDividendStatistics(choice);
   }
 }

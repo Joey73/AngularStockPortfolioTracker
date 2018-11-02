@@ -53,6 +53,7 @@ export class DividendService {
     dividendStatisticsObservable = this.httpClient.get<DividendStatisticsDto>(BASE_URL + 'dividends/' + symbol + '/statistics')
     .pipe(map(
       (data) => {
+        console.log('data.stock.name: ' + data.stock.name);
         console.log('data.growthRate: ' + data.growthRate);
         console.log('data.growth5Y: ' + data.growth5Y);
         return data;
