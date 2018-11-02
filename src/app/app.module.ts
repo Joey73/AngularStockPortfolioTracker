@@ -15,6 +15,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatInputModule } from '@angular/material/input';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -68,6 +70,8 @@ import { DividendTableComponent } from './dividend/dividend-accordion/dividend-y
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     HttpClientModule,
     AppRoutingModule,
@@ -83,7 +87,8 @@ import { DividendTableComponent } from './dividend/dividend-accordion/dividend-y
     MatGridListModule,
     MatChipsModule,
     FlexLayoutModule,
-    MatInputModule
+    MatInputModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]
