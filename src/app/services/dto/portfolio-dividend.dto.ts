@@ -1,11 +1,13 @@
+import { DateDto } from './date.dto';
+
 export class PortfolioDividendDto {
   constructor(
-      public id: number,
-      public totalCollectedCad: number,
-      public totalCollectedEur: number,
-      public totalCollectedUsd: number,
-      public annualDividends: number,
-      public monthlyDividends: number,
-      public exDateDividends: number
+    public id: string,
+    public symbol: string,
+    public numberOfShares: number,
+    public amountPerShare: number,
+    public payDate: DateDto,
+    public currency: string,
+    public totalAmount: number
   ) {}
 }

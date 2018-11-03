@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PositionDto } from 'src/app/services/dto/position.dto';
+import { PortfolioPositionDto } from 'src/app/services/dto/portfolio-position.dto';
 
 @Component({
   selector: 'app-portfolio-positions',
@@ -8,7 +8,7 @@ import { PositionDto } from 'src/app/services/dto/position.dto';
 })
 export class PortfolioPositionsComponent implements OnInit {
   @Input()
-  position: PositionDto;
+  position: PortfolioPositionDto;
 
   myVariableColor = '#00FF00';
   constructor() { }

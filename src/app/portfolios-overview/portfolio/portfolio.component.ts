@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PortfolioDto } from 'src/app/services/dto/portfolio.dto';
+import { PortfolioService } from 'src/app/services/portfolio/portfolio.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -13,9 +14,10 @@ export class PortfolioComponent implements OnInit {
   showDetails = false;
   showAnalysis = false;
 
-  constructor() { }
+  constructor(private portfolioService: PortfolioService) { }
 
   ngOnInit() {
+    // this.portfolioService.
   }
 
   onShowDetails() {

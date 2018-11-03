@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TradeDto } from 'src/app/services/dto/trade.dto';
+import { PortfolioTradeDto } from 'src/app/services/dto/portfolio-trade.dto';
 
 export interface PeriodicElement {
   payDate: string;
@@ -23,7 +23,7 @@ export interface PeriodicElement {
 })
 export class PortfolioTradesComponent implements OnInit {
   @Input()
-  trades: TradeDto[];
+  trades: PortfolioTradeDto[];
 
   displayedColumns: string[] = ['payDate', 'symbol', 'buyOrSell', 'amountOfShares', 'pricePerShare', 'priceTotal', 'fee'];
   // dataSource = ELEMENT_DATA;
