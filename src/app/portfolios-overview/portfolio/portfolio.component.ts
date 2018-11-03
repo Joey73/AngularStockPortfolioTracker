@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PortfolioDto } from 'src/app/services/dto/portfolio.dto';
 import { PortfolioService } from 'src/app/services/portfolio/portfolio.service';
+import { PortfolioDetailsDto } from 'src/app/services/dto/portfolioDetails.dto';
 
 @Component({
   selector: 'app-portfolio',
@@ -9,7 +10,7 @@ import { PortfolioService } from 'src/app/services/portfolio/portfolio.service';
 })
 export class PortfolioComponent implements OnInit {
   @Input()
-  portfolioDto: PortfolioDto;
+  portfolioDetailsDto: PortfolioDetailsDto;
 
   showDetails = false;
   showAnalysis = false;
@@ -17,10 +18,18 @@ export class PortfolioComponent implements OnInit {
   constructor(private portfolioService: PortfolioService) { }
 
   ngOnInit() {
-    // this.portfolioService.
+    this.portfolioService.portfolioDetailsSubject.subscribe(
+      portfolioDetailsDto => {
+        this.portfolioDetailsDto = portfolioDetailsDto;
+      }
+    );
   }
 
   onShowDetails() {
+    this.portfolioService.getPortfolioDetails('92a8053d-182f-4a3a-8c20-a06aa5ed00bd').subscribe(data => {
+      console.log(data);
+    });
+
     if (this.showDetails === false) {
       this.showAnalysis = false;
       this.showDetails = true;

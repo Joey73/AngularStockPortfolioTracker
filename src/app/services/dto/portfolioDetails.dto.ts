@@ -4,7 +4,7 @@ import { PortfolioDividendDto } from './portfolio-dividend.dto';
 
 export class PortfolioDetailsDto {
   constructor(
-    public id: number,
+    public id: string,
     public title: string,
     public strategy: string,
     public profileId: number,

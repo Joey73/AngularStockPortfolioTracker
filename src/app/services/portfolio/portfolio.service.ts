@@ -5,6 +5,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { PortfolioDto } from '../dto/portfolio.dto';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { PortfolioDetailsDto } from '../dto/portfolioDetails.dto';
 
 const BASE_URL = 'http://ddb-web.herokuapp.com/api/v1/';
 // http://ddb-web.herokuapp.com/api/application.wadl
@@ -17,6 +18,7 @@ export class PortfolioService {
 
   allPortfoliosSubject: Subject<PortfolioDto[]> = new Subject();
   numberOfPortfoliosSubject: Subject<number> = new Subject();
+  portfolioDetailsSubject: Subject<PortfolioDetailsDto> = new Subject();
 
   constructor(private httpClient: HttpClient) { }
 
@@ -59,6 +61,21 @@ export class PortfolioService {
       err => this.allPortfoliosSubject.error(err)
     );
     return allPortfoliosObservable;
+  }
+
+  public getPortfolioDetails(id: string): Observable<PortfolioDetailsDto> {
+    let portfolioDetailsObservable: Observable<PortfolioDetailsDto>;
+    portfolioDetailsObservable = this.httpClient.get<PortfolioDetailsDto>(BASE_URL + 'portfolios/' + id)
+    .pipe(map(
+      (portfolioDetails) => {
+        return portfolioDetails;
+      }
+    ));
+    portfolioDetailsObservable.subscribe(
+      portfolioDetails => this.portfolioDetailsSubject.next(portfolioDetails),
+      err => this.portfolioDetailsSubject.error(err)
+    );
+    return portfolioDetailsObservable;
   }
 
   // ADD
