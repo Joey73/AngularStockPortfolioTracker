@@ -6,7 +6,7 @@ import { PortfolioDto } from '../dto/portfolio.dto';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-const BASE_URL = 'http://localhost:8080/stock/';
+const BASE_URL = 'http://ddb-web.herokuapp.com/api/v1/';
 // http://ddb-web.herokuapp.com/api/application.wadl
 
 @Injectable({
@@ -46,14 +46,19 @@ export class PortfolioService {
   }
 
   public getAllPortfolios(): Observable<PortfolioDto[]> {
-    return this.httpClient.get<PortfolioDto[]>(BASE_URL + 'portfolio')
+    let allPortfoliosObservable: Observable<PortfolioDto[]>;
+    allPortfoliosObservable = this.httpClient.get<PortfolioDto[]>(BASE_URL + 'portfolios')
     .pipe(map(
-      (result) => {
-        console.log('getAllPortfolios - result.length: ' + result.length);
-        this.portfolioDtoArrayEventEmitter.emit(result);
-        return result;
+      (portfolios) => {
+        this.numberOfPortfoliosSubject.next(portfolios.length);
+        return portfolios;
       }
     ));
+    allPortfoliosObservable.subscribe(
+      stocks => this.allPortfoliosSubject.next(stocks),
+      err => this.allPortfoliosSubject.error(err)
+    );
+    return allPortfoliosObservable;
   }
 
   // ADD
