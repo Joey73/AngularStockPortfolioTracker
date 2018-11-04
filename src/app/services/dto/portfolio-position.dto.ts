@@ -13,7 +13,7 @@ export class PortfolioPositionDto {
       public fiveYearIncomeGrowth: number,
       public fiveYearRevenueGrowth: number,
       public fiveYearDividendGrowth: number,
-      // public yield: number,
+      public yild: number,
       public sector: string,
       public industry: string,
       public marketPricePerShareChange: number,

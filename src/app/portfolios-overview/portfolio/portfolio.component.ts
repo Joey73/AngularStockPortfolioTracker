@@ -10,9 +10,9 @@ import { PortfolioDetailsDto } from 'src/app/services/dto/portfolioDetails.dto';
 })
 export class PortfolioComponent implements OnInit {
   @Input()
-  portfolioDto: PortfolioDto;
+  portfolio: PortfolioDto;
 
-  portfolioDetailsDto: PortfolioDetailsDto;
+  portfolioDetails: PortfolioDetailsDto;
 
   showDetails = false;
   showAnalysis = false;
@@ -22,16 +22,19 @@ export class PortfolioComponent implements OnInit {
   ngOnInit() {
     this.portfolioService.portfolioDetailsSubject.subscribe(
       portfolioDetailsDto => {
-        this.portfolioDetailsDto = portfolioDetailsDto;
+        console.log('-------------------');
+        this.portfolioDetails = portfolioDetailsDto;
       }
     );
+
+    this.portfolioService.getPortfolioDetails(this.portfolio.id).subscribe(data => {
+      // this.portfolioDetails = data;
+      console.log('PortfolioDetails for id: ' + data.id);
+      console.log(data);
+    });
   }
 
   onShowDetails() {
-    this.portfolioService.getPortfolioDetails('92a8053d-182f-4a3a-8c20-a06aa5ed00bd').subscribe(data => {
-      console.log(data);
-    });
-
     if (this.showDetails === false) {
       this.showAnalysis = false;
       this.showDetails = true;

@@ -11,7 +11,7 @@ export class PortfolioDetailsDto {
     public profileId: number,
     public positions: PortfolioPositionDto[],
     public trades: PortfolioTradeDto[],
-    public dividend: PortfolioDividendDto[],
+    public dividends: PortfolioDividendDto[],
     public statistic: PortfolioStatisticDto
   ) {}
 }

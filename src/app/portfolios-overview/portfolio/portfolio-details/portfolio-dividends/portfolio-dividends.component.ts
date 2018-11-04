@@ -8,11 +8,15 @@ import { PortfolioDividendDto } from 'src/app/services/dto/portfolio-dividend.dt
 })
 export class PortfolioDividendsComponent implements OnInit {
   @Input()
-  dividend: PortfolioDividendDto;
+  dividends: PortfolioDividendDto[];
+
+  displayedColumns: string[] = ['payDate', 'symbol', 'numberOfShares', 'amountPerShare', 'currency', 'totalAmount'];
+  // dataSource = ELEMENT_DATA;
+  dataSource = this.dividends;
 
   constructor() { }
 
   ngOnInit() {
+    this.dataSource = this.dividends;
   }
-
 }

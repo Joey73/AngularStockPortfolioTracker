@@ -2,7 +2,7 @@
   <button mat-mini-fab color="primary">
     <mat-icon aria-label="Add Portfolio">add</mat-icon>
   </button>
-  <div *ngFor="let portfolioDto of portfolioDtoArray">
-    <app-portfolio [portfolioDto]="portfolioDto"></app-portfolio>
+  <div *ngFor="let portfolio of portfolioDtoArray">
+    <app-portfolio [portfolio]="portfolio"></app-portfolio>
   </div>
 </div>

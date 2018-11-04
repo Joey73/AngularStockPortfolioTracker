@@ -7,7 +7,7 @@ import { PortfolioStatisticDto } from './portfolio-statistic.dto';
 
 export class PortfolioDto {
   constructor(
-      public id: number,
+      public id: string,
       public title: string,
       public strategy: number,
       public profileId: number,

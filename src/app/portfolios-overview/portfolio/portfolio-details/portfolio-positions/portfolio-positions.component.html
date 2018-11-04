@@ -9,7 +9,7 @@
         <table>
           <tr>
             <td>Name:</td>
-            <td>{{ position.companyName }}</td>
+            <td>{{ position.name }}</td>
           </tr>
           <tr>
             <td>Currency:</td>
@@ -17,28 +17,28 @@
           </tr>
           <tr>
             <td>Weight:</td>
-            <td>{{ position.weight }}%</td>
+            <td>{{ position.weightOfPortfolio }}%</td>
           </tr>
         </table>
 
         <table>
           <tr>
             <td>Market Price:</td>
-            <td>{{ position.marketPrice }} <mat-icon [ngStyle]="{'color':'green'}">trending_up</mat-icon></td>
+            <td>{{ position.marketPricePerShare }} <mat-icon [ngStyle]="{'color':'green'}">trending_up</mat-icon></td>
           </tr>
           <tr>
             <td>Effective Price:</td>
-            <td><mat-chip [ngStyle]="{'color':'green'}">{{ position.effectivePrice }}</mat-chip></td>
+            <td><mat-chip [ngStyle]="{'color':'green'}">{{ position.marketPricePerShareChange }}</mat-chip></td>
           </tr>
           <tr>
             <td>Total value growth:</td>
-            <td>{{ position.totalValueGrowth }} <mat-icon [ngStyle]="{'color':'red'}">trending_down</mat-icon></td>
+            <td>{{ position.totalGrowthValue }} <mat-icon [ngStyle]="{'color':'red'}">trending_down</mat-icon></td>
           </tr>
         </table>
         <table>
           <tr>
             <td>Number of Shares:</td>
-            <td>{{ position.numberOfShares }}</td>
+            <td>{{ position.totalNumberOfShares }}</td>
           </tr>
           <tr>
             <td>Market Value:</td>
@@ -46,7 +46,7 @@
           </tr>
           <tr>
             <td>Effective Costs:</td>
-            <td>{{ position.effectiveCosts }}</td>
+            <td>{{ position.totalCosts }}</td>
           </tr>
           <tr>
             <td>Total Earnings:</td>
@@ -54,25 +54,25 @@
           </tr>
           <tr>
             <td>Forward Annual Dividends:</td>
-            <td>{{ position.forwardAnnualDividends }}</td>
+            <td>{{ position.annualDividendForward }}</td>
           </tr>
         </table>
         <table>
           <tr>
             <td>Trailing Yield on Market:</td>
-            <td>{{ position.trailingYieldOnMarket }} %</td>
+            <td>{{ position.yieldTrailingOnMarketValue }} %</td>
           </tr>
           <tr>
             <td>Forward Yield on Cost:</td>
-            <td>{{ position.forwardYieldOnCost }} %</td>
+            <td>{{ position.yieldForwardOnCost }} %</td>
           </tr>
           <tr>
             <td>Market Diff.:</td>
-            <td><mat-chip [ngStyle]="{'color':'red'}">{{ position.marketDiff }}</mat-chip></td>
+            <td><mat-chip [ngStyle]="{'color':'red'}">{{ position.marketDifferenceValue }}</mat-chip></td>
           </tr>
           <tr>
             <td>Market Diff. (%):</td>
-            <td><mat-chip [ngStyle]="{'color':'red'}">{{ position.marketDiffInPercent }}</mat-chip></td>
+            <td><mat-chip [ngStyle]="{'color':'red'}">{{ position.marketDifference }}</mat-chip></td>
           </tr>
         </table>
       </div>

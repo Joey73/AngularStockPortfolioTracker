@@ -25,7 +25,7 @@ export class PortfolioTradesComponent implements OnInit {
   @Input()
   trades: PortfolioTradeDto[];
 
-  displayedColumns: string[] = ['payDate', 'symbol', 'buyOrSell', 'amountOfShares', 'pricePerShare', 'priceTotal', 'fee'];
+  displayedColumns: string[] = ['tradeDate', 'symbol', 'action', 'numberOfShares', 'pricePerShare', 'totalTradeValue', 'commission'];
   // dataSource = ELEMENT_DATA;
   dataSource = this.trades;
 
