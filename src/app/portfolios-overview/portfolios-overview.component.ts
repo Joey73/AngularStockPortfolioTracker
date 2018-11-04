@@ -20,7 +20,7 @@ export class PortfoliosOverviewComponent implements OnInit {
     );
 
     this.portfolioService.getAllPortfolios().subscribe(data => {
-      console.log(data);
+      // console.log(data);
     });
   }
 }

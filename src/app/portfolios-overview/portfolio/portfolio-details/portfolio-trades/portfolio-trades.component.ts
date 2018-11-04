@@ -11,11 +11,6 @@ export interface PeriodicElement {
   fee: number;
 }
 
-// const ELEMENT_DATA: PeriodicElement[] = [
-//   {payDate: '2018-06-07', symbol: 'TestSymbol1', buyOrSell: 'buy', amountOfShares: 10, pricePerShare: 123, priceTotal: 1234, fee: 10},
-//   {payDate: '2018-09-28', symbol: 'TestSymbol2', buyOrSell: 'buy', amountOfShares: 20, pricePerShare: 321, priceTotal: 4321, fee: 10}
-// ];
-
 @Component({
   selector: 'app-portfolio-trades',
   templateUrl: './portfolio-trades.component.html',
@@ -26,7 +21,6 @@ export class PortfolioTradesComponent implements OnInit {
   trades: PortfolioTradeDto[];
 
   displayedColumns: string[] = ['tradeDate', 'symbol', 'action', 'numberOfShares', 'pricePerShare', 'totalTradeValue', 'commission'];
-  // dataSource = ELEMENT_DATA;
   dataSource = this.trades;
 
   constructor() { }
@@ -34,5 +28,4 @@ export class PortfolioTradesComponent implements OnInit {
   ngOnInit() {
     this.dataSource = this.trades;
   }
-
 }

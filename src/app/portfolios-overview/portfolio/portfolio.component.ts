@@ -20,17 +20,20 @@ export class PortfolioComponent implements OnInit {
   constructor(private portfolioService: PortfolioService) { }
 
   ngOnInit() {
+    /*
     this.portfolioService.portfolioDetailsSubject.subscribe(
       portfolioDetailsDto => {
-        console.log('-------------------');
+        // console.log('-------------------');
         this.portfolioDetails = portfolioDetailsDto;
+        console.log('--- this.portfolioDetails.id: ' + this.portfolioDetails.id);
       }
     );
-
+    */
+    this.portfolioService.getPortfolioDetails(this.portfolio.id);
     this.portfolioService.getPortfolioDetails(this.portfolio.id).subscribe(data => {
-      // this.portfolioDetails = data;
+      this.portfolioDetails = data;
       console.log('PortfolioDetails for id: ' + data.id);
-      console.log(data);
+      // console.log(data);
     });
   }
 

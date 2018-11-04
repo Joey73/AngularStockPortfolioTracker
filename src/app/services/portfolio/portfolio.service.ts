@@ -18,7 +18,7 @@ export class PortfolioService {
 
   allPortfoliosSubject: Subject<PortfolioDto[]> = new Subject();
   numberOfPortfoliosSubject: Subject<number> = new Subject();
-  portfolioDetailsSubject: Subject<PortfolioDetailsDto> = new Subject();
+  // portfolioDetailsSubject: Subject<PortfolioDetailsDto> = new Subject();
 
   constructor(private httpClient: HttpClient) { }
 
@@ -71,10 +71,12 @@ export class PortfolioService {
         return portfolioDetails;
       }
     ));
+    /*
     portfolioDetailsObservable.subscribe(
       portfolioDetails => this.portfolioDetailsSubject.next(portfolioDetails),
       err => this.portfolioDetailsSubject.error(err)
     );
+    */
     return portfolioDetailsObservable;
   }
 

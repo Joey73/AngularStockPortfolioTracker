@@ -10,7 +10,6 @@ export class PortfolioPositionsComponent implements OnInit {
   @Input()
   position: PortfolioPositionDto;
 
-  myVariableColor = '#00FF00';
   constructor() { }
 
   ngOnInit() {
