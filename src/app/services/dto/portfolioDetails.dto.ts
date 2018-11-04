@@ -1,6 +1,7 @@
 import { PortfolioPositionDto } from './portfolio-position.dto';
 import { PortfolioTradeDto } from './portfolio-trade.dto';
 import { PortfolioDividendDto } from './portfolio-dividend.dto';
+import { PortfolioStatisticDto } from './portfolio-statistic.dto';
 
 export class PortfolioDetailsDto {
   constructor(
@@ -10,6 +11,7 @@ export class PortfolioDetailsDto {
     public profileId: number,
     public positions: PortfolioPositionDto[],
     public trades: PortfolioTradeDto[],
-    public dividend: PortfolioDividendDto[]
+    public dividend: PortfolioDividendDto[],
+    public statistic: PortfolioStatisticDto
   ) {}
 }

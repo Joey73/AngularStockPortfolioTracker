@@ -10,6 +10,8 @@ import { PortfolioDetailsDto } from 'src/app/services/dto/portfolioDetails.dto';
 })
 export class PortfolioComponent implements OnInit {
   @Input()
+  portfolioDto: PortfolioDto;
+
   portfolioDetailsDto: PortfolioDetailsDto;
 
   showDetails = false;

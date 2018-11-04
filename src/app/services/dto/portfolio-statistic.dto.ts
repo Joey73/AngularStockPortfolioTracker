@@ -1,0 +1,36 @@
+
+export class PortfolioStatisticDto {
+  constructor(
+    public portfolioMarktValueEUR: number,
+    public portfolioTotalCostEUR: number,
+    public portfolioEffectiveCostEUR: number,
+    public totalIncomeEUR: number,
+    public totalDiff: number,
+    public totalMarktValueCAD: number,
+    public totalMarktValueEUR: number,
+    public totalMarktValueUSD: number,
+    public totalCostMinusCAD: number,
+    public totalCostEUR: number,
+    public totalCostUSD: number,
+    public totalCostCAD: number,
+    public totalDividendsCollectedUSD: number,
+    public totalDividendsCollectedEUR: number,
+    public totalDividendsCollectedCAD: number,
+    public totalCostMinusDividendCAD: number,
+    public totalCostMinusDividendEUR: number,
+    public totalCostMinusDividendUSD: number,
+    public annualDividendsCAD: number,
+    public annualDividendsEUR: number,
+    public annualDividendsUSD: number,
+    public marktDifferenceValueEUR: number,
+    public marktDifferenceValueUSD: number,
+    public marktDifferenceValueCAD: number,
+    public trailingYieldOnMarket: number,
+    public trailingYieldOnCost: number,
+    public forwardYieldOnCost: number,
+    public forwardAnnualDividendsEUR: number,
+    public totalDividendsEUR: number,
+    public totalDividendsThisYearEUR: number,
+    public totalDividendsPreviousYearEUR: number
+  ) {}
+}

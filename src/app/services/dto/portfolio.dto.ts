@@ -1,19 +1,20 @@
 import { PortfolioDetailsDto } from './portfolioDetails.dto';
 import { PortfolioAnalysisDto } from './portfolioAnalysis.dto.';
+import { PortfolioPositionDto } from './portfolio-position.dto';
+import { PortfolioTradeDto } from './portfolio-trade.dto';
+import { PortfolioDividendDto } from './portfolio-dividend.dto';
+import { PortfolioStatisticDto } from './portfolio-statistic.dto';
 
 export class PortfolioDto {
   constructor(
       public id: number,
-      public portfolioName: string,
-      public portfolioMarketValue: number,
-      public totalCost: number,
-      public effectiveCost: number,
-      public forwardAnnualDividends: number,
-      public dividendsCollectedThisYear: number,
-      public dividendsCollectedPreviousYear: number,
-      public totalIncome: number,
-      public totalIncomeInPercent: number,
-      public portfolioDetails: PortfolioDetailsDto,
-      public portfolioAnalysis: PortfolioAnalysisDto
+      public title: string,
+      public strategy: number,
+      public profileId: number,
+      public currencyCode: number,
+      public posititons: PortfolioPositionDto[],
+      public trades: PortfolioTradeDto[],
+      public dividends: PortfolioDividendDto[],
+      public statistic: PortfolioStatisticDto
   ) {}
 }
