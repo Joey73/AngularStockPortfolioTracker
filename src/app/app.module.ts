@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
@@ -43,6 +45,8 @@ import { DividendComponent } from './dividend/dividend.component';
 import { DividendAccordionComponent } from './dividend/dividend-accordion/dividend-accordion.component';
 import { DividendYearsComponent } from './dividend/dividend-accordion/dividend-years/dividend-years.component';
 import { DividendTableComponent } from './dividend/dividend-accordion/dividend-years/dividend-table/dividend-table.component';
+import { environment } from 'src/environments/environment';
+import { AuthService } from './services/auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -70,6 +74,8 @@ import { DividendTableComponent } from './dividend/dividend-accordion/dividend-y
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
@@ -90,7 +96,7 @@ import { DividendTableComponent } from './dividend/dividend-accordion/dividend-y
     MatInputModule,
     MatAutocompleteModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,13 +1,14 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
     <span>Stock Portfolio Tracker</span>
-    <a routerLink="/">Explanations</a>
-    <a routerLink="/portfolios-overview">Portfolios</a>
-    <a routerLink="/dividends">Dividends</a>
+    <a *ngIf="authenticated" routerLink="/">Explanations</a>
+    <a *ngIf="authenticated" routerLink="/portfolios-overview">Portfolios</a>
+    <a *ngIf="authenticated" routerLink="/dividends">Dividends</a>
     <span class="align-right-spacer"></span>
     <span>
       <!-- <mat-icon>power_settings_new</mat-icon> -->
-      <a routerLink="/">Logout</a>
+      <a *ngIf="!authenticated" (click)="login()">Login</a>
+      <a *ngIf="authenticated" (click)="logout()">Logout</a>
     </span>
   </mat-toolbar-row>
 </mat-toolbar>
